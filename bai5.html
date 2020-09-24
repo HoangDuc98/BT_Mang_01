@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button onclick="testAfterSubtract()">nhấn</button>
+<p id="audio number"></p>
+<body>
+<script>
+    function testAfterSubtract(j) {
+        let flag = false;
+        let b = '01234567';
+        for (let i = 0; i < b.length; i++){
+            if (j == b[i]){
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+    let a = '';
+    a += prompt('nhập chuỗi đếm số âm');
+    let count = 0;
+    for (let i = 0; i < a.length; i++){
+        if ((a[i] == "-") && (testAfterSubtract(a[i + 1]) == true)){
+            count++;
+        }
+    }
+   document.getElementById("audio number").innerHTML = count;
+</script>
+</body>
+</html>
